@@ -1,0 +1,59 @@
+{
+  "name": "@wrium/evasive-button",
+  "version": "1.0.0",
+  "description": "A fun evasive button plugin for Wrium - causes buttons to playfully dodge the cursor when clicked or hovered.",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./index.js"
+    }
+  },
+  "files": [
+    "index.js",
+    "dist/types"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wrium/wrium-evasive-button.git"
+  },
+  "homepage": "https://github.com/wrium/wrium-evasive-button#readme",
+  "bugs": {
+    "url": "https://github.com/wrium/wrium-evasive-button/issues"
+  },
+  "peerDependencies": {
+    "@wrium/wrium": "^1.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@wrium/wrium": "^1.0.0",
+    "jsdom": "^27.3.0",
+    "typescript": "^7.0.2",
+    "vite": "^7.2.4",
+    "vitest": "^4.0.15"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json",
+    "build:types": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "prepublishOnly": "npm run test && npm run test:e2e && npm run build:types"
+  },
+  "keywords": [
+    "wrium",
+    "wrium-plugin",
+    "evasive-button",
+    "runaway-button",
+    "fun-ui"
+  ],
+  "author": "Benjamin Khalife",
+  "license": "MIT"
+}
