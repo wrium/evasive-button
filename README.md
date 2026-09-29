@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/evasive-button.png" alt="@wrium/evasive-button logo" width="200" />
+</p>
+
 # @wrium/evasive-button
 
 A fun, highly practical plugin for [Wrium](https://github.com/wrium/wrium) that makes buttons (or any interactive element) playfully and smoothly dodge the user's cursor when approached, hovered, or clicked.
