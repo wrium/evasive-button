@@ -593,16 +593,16 @@
 
             // Button label is STABLE when fixed/settled: NEVER changes on mouse hover when fixed in place!
             const buttonLabel = computed(() => {
-                if (loginSuccess.value) return "Success!";
-                if (isFormValid.value && requireCredentials.value) return "Log In (Ready)";
-                if (buttonState.value === 'gaveup') return "Log In (Gave Up)";
+                if (loginSuccess.value) return "Success! 🎉";
+                if (isFormValid.value && requireCredentials.value) return "Sign In Now ✨";
+                if (buttonState.value === 'gaveup') return "Fine, Sign In! 🏳️";
                 if (!shouldEvade.value || buttonState.value === 'settled') return "Sign In";
 
                 // Only show evasion dynamic text when actively in motion!
                 if (buttonState.value === 'evading') {
-                    if (evadeCount.value <= 1) return "Too Slow!";
-                    if (evadeCount.value <= 3) return "Missed Me!";
-                    return "Can't Touch!";
+                    if (evadeCount.value <= 1) return "Fill Form First! ✍️";
+                    if (evadeCount.value <= 3) return "Credentials First!";
+                    return "Need Password! 🔒";
                 }
                 return "Sign In";
             });

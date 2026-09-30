@@ -276,13 +276,13 @@ test.describe('Evasive Button Plugin (v-evade) - Login Screen E2E', () => {
         await expect(page.getByTestId('username-input')).toHaveValue('alice');
         await expect(page.getByTestId('password-input')).toHaveValue('supersecret');
         await expect(page.getByTestId('evade-status')).toHaveText('Settled');
-        await expect(button).toHaveText('Log In (Ready)');
+        await expect(button).toHaveText('Sign In Now ✨');
 
-        // Text remains strictly fixed as "Log In (Ready)" when moving cursor around it
+        // Text remains strictly fixed as "Sign In Now ✨" when moving cursor around it
         const box = await button.boundingBox();
         await page.mouse.move(box.x - 10, box.y + box.height / 2);
         await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
-        await expect(button).toHaveText('Log In (Ready)');
+        await expect(button).toHaveText('Sign In Now ✨');
     });
 
     test('time-based restriction checkbox activates 5-second duration limit badge', async ({ page }) => {
@@ -318,7 +318,7 @@ test.describe('Evasive Button Plugin (v-evade) - Login Screen E2E', () => {
         await page.waitForTimeout(5300);
 
         // 4. Button has surrendered!
-        await expect(button).toHaveText('Log In (Gave Up)');
+        await expect(button).toHaveText('Fine, Sign In! 🏳️');
         await expect(page.getByTestId('button-state')).toHaveText('gaveup');
         await expect(timerDisplay).toContainText('Gave Up');
 
